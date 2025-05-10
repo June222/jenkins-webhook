@@ -23,10 +23,10 @@ pipeline {
                     // dev 브랜치 기준으로 변경된 파일을 확인
                     sh 'git fetch origin dev'
 
-                    def changedFiles = sh(
-                        script: 'git diff --name-only HEAD origin/dev',
-                        returnStdout: true
-                    ).trim().split('\n')
+		    def changedFiles = sh(
+    		   	script: 'git diff --name-only HEAD~1 HEAD',
+    			returnStdout: true
+		    ).trim().split('\n')
 
                     // FE 디렉토리 내부 변경 여부 체크
                     def feChanged = changedFiles.any { it.startsWith('FE/') }
