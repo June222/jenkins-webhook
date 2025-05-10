@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'ap-northeast-2' // 원하는 리전으로 변경
-        S3_BUCKET = 'your-s3-bucket-name' // 업로드할 S3 버킷 이름
+        S3_BUCKET = 'jenkins-fe-s3-cicd' // 업로드할 S3 버킷 이름
     }
 
     triggers {
