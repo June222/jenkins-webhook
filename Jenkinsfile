@@ -51,7 +51,7 @@ pipeline {
             steps {
                 dir('FE') {
                     sh '''
-                        aws s3 sync . s3://$S3_BUCKET/FE/ --delete
+                        aws s3 sync . s3://$S3_BUCKET/ --delete
                     '''
                 }
             }
